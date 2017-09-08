@@ -10,6 +10,7 @@ namespace ConnOracle.Controllers
     public class HomeController : Controller
     {
         private OracleDao dao = new OracleDao();
+        private OracleDapper ddao = new OracleDapper();
 
         public ActionResult Index()
         {
@@ -34,6 +35,11 @@ namespace ConnOracle.Controllers
         {
             return View(dao.GetInv("TTB1012061"));
 
+        }
+
+        public ActionResult DataThuDapper()
+        {
+            return View(ddao.GetInv("RU47076209"));
         }
     }
 }
