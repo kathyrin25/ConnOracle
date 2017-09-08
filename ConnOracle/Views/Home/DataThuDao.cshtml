@@ -1,0 +1,51 @@
+﻿@model IEnumerable<ConnOracle.Models.INVLinesModel>
+
+@{
+    ViewBag.Title = "DataThuDao";
+}
+
+<h2>DataThuDao</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.invoice_num)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.line_number)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.amount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.account_segment)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.description)
+        </th>
+       
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.invoice_num)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.line_number)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.amount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.account_segment)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.description)
+        </td>
+       
+    </tr>
+}
+
+</table>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConnOracle.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +9,8 @@ namespace ConnOracle.Controllers
 {
     public class HomeController : Controller
     {
+        private OracleDao dao = new OracleDao();
+
         public ActionResult Index()
         {
             return View();
@@ -25,6 +28,12 @@ namespace ConnOracle.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+
+        public ActionResult DataThuDao()
+        {
+            return View(dao.GetInv("TTB1012061"));
+
         }
     }
 }
